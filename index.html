@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceita?</title>
+    <style>
+        /* Estilização básica da página */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Estilização do smile */
+        .smile {
+            font-size: 50px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aceita ser meu padrinho?</h1>
+    <div class="buttons">
+        <button class="btn" id="sim">Sim</button>
+        <button class="btn" id="nao">Não</button>
+    </div>
+    <div class="smile" id="smile">😊</div>
+
+    <script>
+        const btnNao = document.getElementById("nao");
+        const btnSim = document.getElementById("sim");
+        const smile = document.getElementById("smile");
+
+        btnNao.addEventListener("mouseover", () => {
+            btnNao.style.position = "absolute";
+            btnNao.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
+            btnNao.style.left = `${Math.random() * (window.innerWidth - 50)}px`;
+        });
+
+        btnSim.addEventListener("click", () => {
+            smile.style.display = "block";
+        });
+    </script>
+</body>
+</html>
